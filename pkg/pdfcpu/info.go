@@ -97,6 +97,9 @@ func (ctx *Context) ensureInfoDict() error {
 	// ModDate		        modified by pdfcpu
 	// Trapped              -
 
+	if ctx.Info != nil {
+		return nil
+	}
 	now := DateString(time.Now())
 
 	v := "pdfcpu " + VersionStr
